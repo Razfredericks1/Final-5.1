@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="3.1.css">
+    <style>
+        #return{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <audio controls src="creative-technology-showreel-241274.mp3"></audio>
+        <!-- I tried to use autoplay in the audio tag and it wouldn't work
+        I assume this is because most browsers don't allow for this -->
+        <h2>Type a word in the box below, then click the button to see if it is a palindrome.</h2>
+    </header>
+    <nav>
+        <a href="FINAL_INDEX.html">
+            <button id="return">main menu</button>
+        </a>
+        <br>
+    </nav>
+    <input id="string" placeholder="type word here"/> 
+    <br>
+    <button id="test" onclick="PalindromeCheck(string)">click to check word</button>
+    <br>
+    <img src="kayak.jpg">
+    <script src="3.1.js"></script>
+</body>
+</html>

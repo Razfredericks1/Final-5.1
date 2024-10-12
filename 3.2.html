@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assignment3.2</title>
+    <style> 
+    /* css applications, kept it simple for this one and kept everything to the left since it looked nicer */
+        button{
+            background-color: blue;
+            color: white;
+        }
+        body{
+            background-color: black;
+            color: white;
+        }
+        p{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h3>Please enter your information bellow</h3>
+</header>
+<nav>
+    <a href="FINAL_INDEX.html">
+        <button>main menu</button>
+    </a>
+</nav>
+    <p id="name"></p> 
+    <!-- setting spot for name+last to appear after input -->
+    <p id="zip"></p>
+    <!-- setting spot for zip to appear after input -->
+    <input id="firstname" type="text" placeholder="First Name"/>
+    <!-- creating input for first name -->
+    <input id="lastname" type="text" placeholder="Last Name"/>
+    <!-- creating input for last name -->
+    <button id="concat" onclick="concatonate()">click to concatonate name</button>
+    <!-- button for concat of first and last name -->
+    <br>
+    <br> <!--several breaks, there is probably a better way of doing this-->
+    <br>
+    <script>
+    function concatonate() 
+            // function for concatonating first and last name, assuming less than 20 characters are used. 
+        {
+            let firstname = document.getElementById("firstname").value;
+            // using input for first name in fucntion
+            let lastname = document.getElementById("lastname").value;
+            // using inut for last name in function
+            let full_name = firstname + " " + lastname;
+            //concat
+            len = full_name.length;
+            //len = total characters used in full name (post concat)
+            if(len > 20){ //if length is greater than 20, alert
+                alert("name too long, try something else");
+                window.stop; 
+            }
+            else{
+                document.getElementById("name").innerHTML = full_name;
+                //if less than 20 characters, print onto p with id 'name'
+            }
+            
+        }
+        </script>
+    </body>
+    <input id="zipcode" type="text" placeholder="Zip Code"/>
+    <button id="zipbutton" onclick="zip()">Click here to confirm zip code</button>
+    <button id="music" onclick="audio()">music</button> 
+   
+       <script>
+            function zip()//function for zip code characters
+            {
+                let zipcode = document.getElementById("zipcode").value;
+                //getting zipcode input for fucntion
+                len = zipcode.length
+                //len = total characters from zipcode input
+                if(len !== 5){ //if len is greater than or less than 5, alert
+                    alert("invalid zip code, try again");
+                    window.stop;
+                }
+                else{
+                    document.getElementById("zip").innerHTML = zipcode;
+                    //if zip code is 5 characters, print zip to p with id of zip
+                    alert("CONGRATULATIONS, YOU HAVE FOUND THIS SECRET MESSAGE. You recieve nothing.");
+                    //hidden message using alert
+                }
+            }
+        </script>
+</body>
+</html>
